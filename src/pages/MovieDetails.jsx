@@ -1,12 +1,12 @@
-import Loader from 'components/Loader/Loader';
 import React, { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { fetchMovieDetails } from 'services/movie-api';
 import defaultPoster from 'images/default-movie.jpg';
-import { toast } from 'react-toastify';
 import { MoviePoster } from 'components/MovieList/MovieList.styled';
 import {
-  DetailsWrapper, MovieWrapper,
+  DetailsWrapper,
+  MovieWrapper,
   MovieTitle,
   VoteCount,
   VoteText,
@@ -20,7 +20,6 @@ import {
   BackBtnIcon,
 } from './MovieDetails.styled';
 import { RLink } from 'styles/GlobalStyles';
-
 
 export default function MovieDetails() {
   const { movieId } = useParams();
