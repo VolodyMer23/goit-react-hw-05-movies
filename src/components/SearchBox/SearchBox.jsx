@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import propTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -9,7 +10,7 @@ import {
   SearchIcon,
 } from './SearchBox.styled';
 
-export default function SearchBox({value, onSubmit }) {
+export default function SearchBox({ onSubmit }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleChange = e => {
@@ -37,7 +38,6 @@ export default function SearchBox({value, onSubmit }) {
           autoComplete="off"
           autoFocus
           placeholder="Search"
-          // value={value}
           onChange={handleChange}
         />
       </SerchBar>
@@ -45,4 +45,6 @@ export default function SearchBox({value, onSubmit }) {
   );
 }
 
-
+SearchBox.propTypes = {
+  onSubmit: propTypes.func.isRequired,
+};

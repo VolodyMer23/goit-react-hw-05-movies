@@ -48,6 +48,8 @@ MovieList.propTypes = {
       id: propTypes.number.isRequired,
       title: propTypes.string.isRequired,
       poster_path: propTypes.string,
+      original_title: propTypes.string,
+      release_date: propTypes.string,
     })
   ),
 };

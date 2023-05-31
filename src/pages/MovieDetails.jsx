@@ -30,7 +30,6 @@ export default function MovieDetails() {
   useEffect(() => {
     fetchMovieDetails(movieId)
       .then(({ data }) => {
-        console.log('data :>> ', data);
         setMovieData(data);
       })
       .catch(error => {
